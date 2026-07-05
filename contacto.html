@@ -33,6 +33,42 @@
 
     <main>
 
+        <!-- Formulario de contacto.
+             action="confirmacion.html" -> a donde va al enviar.
+             method="get" -> en un sitio estatico (sin servidor) es la unica forma de
+             "redirigir" al enviar; post necesitaria un backend que reciba los datos. -->
+        <section>
+            <h2>Contactanos</h2>
+            <p>¿Tenés algo para decir sobre la peli? Mandanos tu mensaje.</p>
+
+            <form class="formulario" action="confirmacion.html" method="get">
+                <div class="campo">
+                    <!-- for + id atan el label con el input (accesibilidad y click). -->
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre">
+                </div>
+
+                <div class="campo">
+                    <label for="apellido">Apellido</label>
+                    <input type="text" id="apellido" name="apellido" required placeholder="Tu apellido">
+                </div>
+
+                <div class="campo">
+                    <!-- type="email": el navegador valida el formato del correo automaticamente. -->
+                    <label for="email">Correo electrónico</label>
+                    <input type="email" id="email" name="email" required placeholder="tucorreo@ejemplo.com">
+                </div>
+
+                <div class="campo">
+                    <!-- minlength: exige un minimo de caracteres antes de dejar enviar. -->
+                    <label for="mensaje">Mensaje</label>
+                    <textarea id="mensaje" name="mensaje" rows="5" required minlength="10" placeholder="Escribí tu mensaje..."></textarea>
+                </div>
+
+                <button type="submit" class="boton-enviar">Enviar mensaje</button>
+            </form>
+        </section>
+
         <section>
             <h2>Redes Sociales Oficiales</h2>
             <p>
