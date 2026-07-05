@@ -1,3 +1,30 @@
+﻿/* ============================================================
+   VARIABLES GLOBALES (paleta synthwave + tipografia + glow)
+   Se definen UNA vez en :root y se reutilizan con var(--nombre).
+   Ventaja: cambias un color aca y se actualiza todo el sitio.
+   ============================================================ */
+:root {
+    /* Fondos (negro purpura, de mas oscuro a mas claro) */
+    --fondo:          #0d0221;
+    --fondo-panel:    #190833;
+    --borde:          #3a1a6e;
+
+    /* Neones (saturados, para que "brillen" contra el fondo) */
+    --neon-naranja:   #ff6b1a;   /* naranja atardecer */
+    --neon-violeta:   #b026ff;   /* violeta electrico */
+
+    /* Texto */
+    --texto:          #e6e0ff;
+    --texto-suave:    #a99fd0;
+
+    /* Tipografias */
+    --fuente-titulo:  'Orbitron', sans-serif;
+    --fuente-cuerpo:  'Inter', sans-serif;
+
+    /* Glow reutilizable: resplandor de neon para titulos y bordes */
+    --glow-naranja:   0 0 8px rgba(255, 107, 26, 0.7);
+    --glow-violeta:   0 0 10px rgba(176, 38, 255, 0.6);
+}
 
 * {
     margin: 0;
@@ -6,22 +33,25 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #0d0d1a;
-    color: #e0e0f0;
+    font-family: var(--fuente-cuerpo);   /* Inter: cuerpo legible */
+    background-color: var(--fondo);
+    color: var(--texto);
     line-height: 1.7;
 }
 
 header {
-    background-color: #1a0533;
-    border-bottom: 3px solid #e8870a;
+    background-color: var(--fondo-panel);
+    border-bottom: 3px solid var(--neon-naranja);
+    box-shadow: var(--glow-naranja);   /* el borde inferior "brilla" */
     padding: 20px;
     text-align: center;
 }
 
 header h1 {
+    font-family: var(--fuente-titulo);   /* Orbitron: solo en titulos */
     font-size: 2rem;
-    color: #e8870a;
+    color: var(--neon-naranja);
+    text-shadow: var(--glow-naranja);    /* resplandor de neon sobre el texto */
     text-transform: uppercase;
     letter-spacing: 3px;
 }
@@ -34,7 +64,7 @@ header p.subtitulo {
 
 nav {
     background-color: #12012e;
-    border-bottom: 1px solid #3a1a6e;
+    border-bottom: 1px solid var(--borde);
 }
 
 nav ul {
@@ -49,17 +79,19 @@ nav ul {
 nav ul li a {
     display: block;
     padding: 12px 20px;
-    color: #c0b0e8;
+    color: var(--texto-suave);
     text-decoration: none;
     font-weight: bold;
     font-size: 0.9rem;
     text-transform: uppercase;
+    transition: color 0.25s ease, background-color 0.25s ease;   /* animacion suave al pasar el mouse */
 }
 
 nav ul li a:hover,
 nav ul li a.activo {
-    color: #e8870a;
+    color: var(--neon-naranja);
     background-color: #1f0550;
+    text-shadow: var(--glow-naranja);
 }
 
 main {
@@ -71,8 +103,9 @@ main {
 .hero {
     text-align: center;
     margin-bottom: 50px;
-    background-color: #1a0533;
-    border: 1px solid #3a1a6e;
+    background-color: var(--fondo-panel);
+    border: 1px solid var(--neon-violeta);
+    box-shadow: var(--glow-violeta);   /* el panel entero brilla en violeta */
     border-radius: 6px;
     overflow: hidden;
 }
@@ -80,7 +113,10 @@ main {
 .hero img {
     width: 100%;
     max-height: 480px;
-    object-fit: cover;
+    /* 'contain' muestra el poster COMPLETO sin recortarlo (antes 'cover' lo cortaba,
+       ese era el "contenido cortado" que marco el profe). El fondo rellena los costados. */
+    object-fit: contain;
+    background-color: #0a0118;
     display: block;
 }
 
@@ -89,8 +125,10 @@ main {
 }
 
 .hero-texto h2 {
+    font-family: var(--fuente-titulo);
     font-size: 1.6rem;
-    color: #e8870a;
+    color: var(--neon-naranja);
+    text-shadow: var(--glow-naranja);
     margin-bottom: 12px;
 }
 
@@ -106,15 +144,19 @@ section {
 }
 
 section h2 {
+    font-family: var(--fuente-titulo);   /* Orbitron */
     font-size: 1.4rem;
-    color: #e8870a;
+    color: var(--neon-naranja);
+    text-shadow: var(--glow-naranja);
     margin-bottom: 18px;
     text-transform: uppercase;
 }
 
 section h3 {
+    font-family: var(--fuente-titulo);
     font-size: 1.1rem;
-    color: #c080f0;
+    color: var(--neon-violeta);
+    text-shadow: var(--glow-violeta);
     margin-bottom: 8px;
     margin-top: 18px;
 }
