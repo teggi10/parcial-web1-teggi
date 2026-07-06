@@ -417,10 +417,20 @@ footer p span {
     transform: translateY(-2px);    /* pequeña animacion al pasar el mouse */
 }
 
-/* Pagina de confirmacion: mensaje centrado */
+/* Pagina de confirmacion / error: mensaje centrado */
 .mensaje-centrado {
     text-align: center;
     padding: 40px 20px;
+}
+
+/* Codigo de error grande (pagina 404) */
+.codigo-error {
+    font-family: var(--fuente-titulo);
+    font-size: 6rem;
+    font-weight: 800;
+    color: var(--neon-violeta);
+    text-shadow: var(--glow-violeta);
+    margin-bottom: 10px;
 }
 
 /* Reproductor de audio embebido (Spotify) */
