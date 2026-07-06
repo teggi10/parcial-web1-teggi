@@ -422,3 +422,16 @@ footer p span {
     text-align: center;
     padding: 40px 20px;
 }
+
+/* Reproductor de audio embebido (Spotify) */
+.reproductor {
+    margin-top: 20px;
+    border: 1px solid var(--neon-violeta);
+    box-shadow: var(--glow-violeta);
+    border-radius: 12px;
+    overflow: hidden;   /* recorta las esquinas del iframe al radio del contenedor */
+}
+
+.reproductor iframe {
+    display: block;
+}
