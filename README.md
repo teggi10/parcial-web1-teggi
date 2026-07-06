@@ -25,7 +25,7 @@ No usé frameworks ni JavaScript, solo HTML y CSS como pedía la consigna.
 
 ## Deploy
 
-El sitio está publicado en Vercel: (agregar link acá cuando esté)
+El sitio está publicado en Vercel: https://parcial-web1-teggi.vercel.app
 
 ## Autor
 
