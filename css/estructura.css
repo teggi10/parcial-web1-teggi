@@ -1,0 +1,149 @@
+/* ============================================================
+   ESTRUCTURA GENERAL
+   Esqueleto que se repite en TODAS las paginas del sitio:
+   variables, reset, body, header, nav, main, titulos y footer.
+   Este archivo se enlaza SIEMPRE.
+   ============================================================ */
+
+/* Variables globales (paleta synthwave + tipografia + glow).
+   Se definen una vez y se reutilizan con var(--nombre). */
+:root {
+    /* Fondos (negro purpura, de mas oscuro a mas claro) */
+    --fondo:          #0d0221;
+    --fondo-panel:    #190833;
+    --borde:          #3a1a6e;
+
+    /* Neones (saturados, para que "brillen" contra el fondo) */
+    --neon-naranja:   #ff6b1a;   /* naranja atardecer */
+    --neon-violeta:   #b026ff;   /* violeta electrico */
+
+    /* Texto */
+    --texto:          #e6e0ff;
+    --texto-suave:    #a99fd0;
+
+    /* Tipografias */
+    --fuente-titulo:  'Orbitron', sans-serif;
+    --fuente-cuerpo:  'Inter', sans-serif;
+
+    /* Glow reutilizable: resplandor de neon para titulos y bordes */
+    --glow-naranja:   0 0 8px rgba(255, 107, 26, 0.7);
+    --glow-violeta:   0 0 10px rgba(176, 38, 255, 0.6);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--fuente-cuerpo);   /* Inter: cuerpo legible */
+    background-color: var(--fondo);
+    color: var(--texto);
+    line-height: 1.7;
+}
+
+header {
+    background-color: var(--fondo-panel);
+    border-bottom: 3px solid var(--neon-naranja);
+    box-shadow: var(--glow-naranja);   /* el borde inferior "brilla" */
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-family: var(--fuente-titulo);   /* Orbitron: solo en titulos */
+    font-size: 2rem;
+    color: var(--neon-naranja);
+    text-shadow: var(--glow-naranja);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+header p.subtitulo {
+    font-size: 0.95rem;
+    color: #9090cc;
+    margin-top: 6px;
+}
+
+nav {
+    background-color: #12012e;
+    border-bottom: 1px solid var(--borde);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li a {
+    display: block;
+    padding: 12px 20px;
+    color: var(--texto-suave);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    transition: color 0.25s ease, background-color 0.25s ease;   /* animacion suave al pasar el mouse */
+}
+
+nav ul li a:hover,
+nav ul li a.activo {
+    color: var(--neon-naranja);
+    background-color: #1f0550;
+    text-shadow: var(--glow-naranja);
+}
+
+main {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 30px;
+}
+
+section {
+    margin-bottom: 50px;
+}
+
+section h2 {
+    font-family: var(--fuente-titulo);   /* Orbitron */
+    font-size: 1.4rem;
+    color: var(--neon-naranja);
+    text-shadow: var(--glow-naranja);
+    margin-bottom: 18px;
+    text-transform: uppercase;
+}
+
+section h3 {
+    font-family: var(--fuente-titulo);
+    font-size: 1.1rem;
+    color: var(--neon-violeta);
+    text-shadow: var(--glow-violeta);
+    margin-bottom: 8px;
+    margin-top: 18px;
+}
+
+section p {
+    color: #c0c0e0;
+    margin-bottom: 12px;
+}
+
+footer {
+    background-color: #12012e;
+    border-top: 3px solid var(--neon-naranja);
+    text-align: center;
+    padding: 25px 20px;
+    margin-top: 60px;
+}
+
+footer p {
+    color: #6060a0;
+    font-size: 0.85rem;
+}
+
+footer p span {
+    color: var(--neon-naranja);
+}
