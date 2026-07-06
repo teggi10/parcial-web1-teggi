@@ -64,6 +64,13 @@
 /* Solo lo que hace unica a la tarjeta; el fondo/borde vienen de .panel */
 .tarjeta {
     flex: 1 1 280px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Al pasar el mouse, la tarjeta se eleva y brilla en violeta. */
+.tarjeta:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--glow-violeta);
 }
 
 .tarjeta img {
